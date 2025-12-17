@@ -957,195 +957,139 @@
 
     <!-- البيانات المنظمة لتحسين SEO -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "نيڤ للصابون",
-        "description": "صابون غسيل معطر طبيعي 100% يصنع يدوياً في أرقو، الولاية الشمالية، السودان",
-        "telephone": "+249113570426",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "أرقو",
-            "addressRegion": "الولاية الشمالية",
-            "addressCountry": "السودان"
-        },
-        "openingHours": "Sa-Th 08:00-20:00, Fr 10:00-18:00"
+{
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "نيڤ للصابون",
+    "description": "صابون غسيل معطر طبيعي 100% يصنع يدوياً في أرقو، الولاية الشمالية، السودان",
+    "telephone": "+249113570426",
+    "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "أرقو",
+        "addressRegion": "الولاية الشمالية",
+        "addressCountry": "السودان"
+    },
+    "openingHours": "Sa-Th 08:00-20:00, Fr 10:00-18:00"
+}
+</script>
+
+<script>
+// حل مباشر وفعال - استبدل كل JavaScript بهذا الكود
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('موقع نيڤ يبدأ التحميل...');
+    
+    // 1. تحديث السنة الحالية
+    const currentYearElement = document.getElementById('currentYear');
+    if (currentYearElement) {
+        currentYearElement.textContent = new Date().getFullYear();
+        console.log('السنة الحالية تم تحديثها');
     }
-    </script>
-
-    <script>
-        // بيانات الصور للمعرض
-        const galleryImages = [
-            {
-                url: '2.jpg',
-                title: 'صابون نيڤ الجاهز',
-                description: 'قطع صابون نيڤ الجاهزة برائحة عطرة'
-            },
-            {
-                url: '3.jpg',
-                title: 'التغليف',
-                description: 'صابون نيڤ معبأ بعناية'
-            },
-            {
-                url: '4.jpg',
-                title: 'الاستخدام',
-                description: 'صابون نيڤ سهل الاستخدام'
-            },
-            {
-                url: '1.png',
-                title: 'صناعة يدوية',
-                description: 'يصنع يدوياً في ورشتنا'
-            }
-        ];
-
-        // كائن التطبيق الرئيسي
-        const NiveApp = {
-            // تهيئة الموقع
-            init: function() {
-                this.setupCurrentYear();
-                this.loadGallery();
-                this.setupMobileMenu();
-                this.setupScrollSpy();
-                this.fixPhoneNumbers();
-                console.log('موقع نيڤ جاهز للتشغيل!');
-            },
+    
+    // 2. تحميل معرض الصور
+    const galleryImages = [
+        { url: '2.jpg', title: 'صابون نيڤ الجاهز', description: 'قطع صابون نيڤ الجاهزة برائحة عطرة' },
+        { url: '3.jpg', title: 'التغليف', description: 'صابون نيڤ معبأ بعناية' },
+        { url: '4.jpg', title: 'الاستخدام', description: 'صابون نيڤ سهل الاستخدام' },
+        { url: '1.png', title: 'صناعة يدوية', description: 'يصنع يدوياً في ورشتنا' }
+    ];
+    
+    const galleryGrid = document.getElementById('galleryGrid');
+    if (galleryGrid) {
+        galleryImages.forEach(image => {
+            const galleryItem = document.createElement('div');
+            galleryItem.className = 'gallery-item';
             
-            // تحديث السنة الحالية
-            setupCurrentYear: function() {
-                document.getElementById('currentYear').textContent = new Date().getFullYear();
-            },
+            galleryItem.innerHTML = `
+                <div class="gallery-image">
+                    <img src="${image.url}" alt="${image.title}" loading="lazy" width="300" height="200">
+                </div>
+                <div class="gallery-content">
+                    <h4>${image.title}</h4>
+                    <p>${image.description}</p>
+                </div>
+            `;
             
-            // تحميل معرض الصور
-            loadGallery: function() {
-                const galleryGrid = document.getElementById('galleryGrid');
-                if (!galleryGrid) return;
-                
-                galleryImages.forEach((image, index) => {
-                    const galleryItem = document.createElement('div');
-                    galleryItem.className = 'gallery-item';
-                    galleryItem.setAttribute('data-aos', 'fade-up');
-                    
-                    galleryItem.innerHTML = `
-                        <div class="gallery-image">
-                            <img src="${image.url}" alt="${image.title}" loading="lazy" width="300" height="200">
-                        </div>
-                        <div class="gallery-content">
-                            <h4>${image.title}</h4>
-                            <p>${image.description}</p>
-                        </div>
-                    `;
-                    
-                    galleryGrid.appendChild(galleryItem);
-                });
-            },
-            
-            // إعداد القائمة للهواتف
-            setupMobileMenu: function() {
-                const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-                const navMenu = document.getElementById('navMenu');
-                const navLinks = document.querySelectorAll('.nav-link');
-                
-                if (!mobileMenuBtn || !navMenu) return;
-                
-                mobileMenuBtn.addEventListener('click', () => {
-                    navMenu.classList.toggle('active');
-                    mobileMenuBtn.innerHTML = navMenu.classList.contains('active') 
-                        ? '<i class="fas fa-times"></i>' 
-                        : '<i class="fas fa-bars"></i>';
-                    
-                    // تحديث ARIA label
-                    mobileMenuBtn.setAttribute(
-                        'aria-label', 
-                        navMenu.classList.contains('active') ? 'إغلاق القائمة' : 'فتح القائمة'
-                    );
-                });
-                
-                navLinks.forEach(link => {
-                    link.addEventListener('click', () => {
-                        navMenu.classList.remove('active');
-                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                        mobileMenuBtn.setAttribute('aria-label', 'فتح القائمة');
-                        
-                        navLinks.forEach(item => item.classList.remove('active'));
-                        link.classList.add('active');
-                    });
-                });
-                
-                // إغلاق القائمة عند النقر خارجها
-                document.addEventListener('click', (event) => {
-                    if (!navMenu.contains(event.target) && !mobileMenuBtn.contains(event.target) && navMenu.classList.contains('active')) {
-                        navMenu.classList.remove('active');
-                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                        mobileMenuBtn.setAttribute('aria-label', 'فتح القائمة');
-                    }
-                });
-            },
-            
-            // متابعة التمرير للروابط النشطة
-            setupScrollSpy: function() {
-                const sections = document.querySelectorAll('section');
-                const navLinks = document.querySelectorAll('.nav-link');
-                
-                if (sections.length === 0) return;
-                
-                window.addEventListener('scroll', () => {
-                    let current = '';
-                    
-                    sections.forEach(section => {
-                        const sectionTop = section.offsetTop;
-                        const sectionHeight = section.clientHeight;
-                        
-                        if (window.pageYOffset >= (sectionTop - 100)) {
-                            current = section.getAttribute('id');
-                        }
-                    });
-                    
-                    navLinks.forEach(link => {
-                        link.classList.remove('active');
-                        if (link.getAttribute('href') === '#' + current) {
-                            link.classList.add('active');
-                        }
-                    });
-                });
-            },
-            
-            // إصلاح عرض أرقام الهواتف
-            fixPhoneNumbers: function() {
-                const phoneElements = document.querySelectorAll('.phone-number, .phone-container');
-                
-                phoneElements.forEach(element => {
-                    element.style.direction = 'ltr';
-                    element.style.textAlign = 'right';
-                    element.style.unicodeBidi = 'bidi-override';
-                    
-                    const phoneText = element.textContent || element.innerText;
-                    const formattedPhone = phoneText.replace(/(\d{3})(\d{2})(\d{3})(\d{4})/, '+$1 $2 $3 $4');
-                    
-                    if (element.textContent !== formattedPhone) {
-                        element.textContent = formattedPhone;
-                    }
-                });
-            },
-            
-            // دالة مساعدة: نسخ رقم الهاتف
-            copyPhoneNumber: function() {
-                const phoneNumber = '+249113570426';
-                navigator.clipboard.writeText(phoneNumber).then(() => {
-                    alert('تم نسخ رقم الهاتف: ' + phoneNumber);
-                });
-            }
-        };
-
-        // تشغيل التطبيق عند تحميل الصفحة
-        document.addEventListener('DOMContentLoaded', () => NiveApp.init());
+            galleryGrid.appendChild(galleryItem);
+        });
+        console.log('معرض الصور تم تحميله');
+    }
+    
+    // 3. القائمة المتنقلة - الحل الأساسي
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navMenu = document.getElementById('navMenu');
+    
+    if (mobileMenuBtn && navMenu) {
+        console.log('عناصر القائمة موجودة، جاهز للتهيئة');
         
-        // تحسين تحميل الصور
-        if ('loading' in HTMLImageElement.prototype) {
-            const images = document.querySelectorAll('img[loading="lazy"]');
-            images.forEach(img => {
-                img.src = img.dataset.src;
+        // زر القائمة الأساسي
+        mobileMenuBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            e.preventDefault();
+            
+            console.log('تم النقر على زر القائمة');
+            
+            navMenu.classList.toggle('active');
+            const isActive = navMenu.classList.contains('active');
+            this.innerHTML = isActive ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            
+            console.log('حالة القائمة:', isActive ? 'مفتوحة' : 'مغلقة');
+        });
+        
+        // إغلاق القائمة عند النقر خارجها
+        document.addEventListener('click', function(e) {
+            if (!navMenu.contains(e.target) && !mobileMenuBtn.contains(e.target) && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                console.log('تم إغلاق القائمة (نقر خارج)');
+            }
+        });
+        
+        // إغلاق القائمة عند النقر على روابط
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 768 && navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    console.log('تم إغلاق القائمة (نقر على رابط)');
+                }
             });
-        }
-    </script>
+        });
+        
+        console.log('القائمة المتنقلة تم تهيئتها');
+    } else {
+        console.error('خطأ: عناصر القائمة غير موجودة!');
+        console.log('mobileMenuBtn موجود:', !!mobileMenuBtn);
+        console.log('navMenu موجود:', !!navMenu);
+    }
+    
+    // 4. إصلاح أرقام الهواتف
+    const phoneElements = document.querySelectorAll('.phone-number, .phone-container');
+    phoneElements.forEach(element => {
+        element.style.direction = 'ltr';
+        element.style.textAlign = 'right';
+        element.style.unicodeBidi = 'bidi-override';
+    });
+    
+    // 5. التنقل السلس
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            if (this.getAttribute('href') === '#') return;
+            
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
+    console.log('موقع نيڤ جاهز للتشغيل!');
+});
+</script>
 </body>
 </html>
