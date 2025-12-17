@@ -4,14 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- معلومات SEO الأساسية -->
+    <!-- المعلومات الأساسية للصفحة -->
     <title>صابون نيڤ للغسيل المعطر - منتج سوداني أصلي من أرقو</title>
     <meta name="description" content="صابون نيڤ للغسيل المعطر - منتج سوداني طبيعي 100% يصنع يدوياً في أرقو. صابون غسيل مركز برائحة عطرة تدوم طويلاً. مناسب لجميع أنواع الأقمشة.">
     <meta name="keywords" content="صابون غسيل, صابون سوداني, صابون نيڤ, غسيل الملابس, منظف طبيعي, أرقو, الولاية الشمالية, صابون معطر">
     <meta name="author" content="نيڤ للصابون">
     
+    <!-- معلومات SEO الأساسية -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    
+    <!-- Open Graph لفيسبوك -->
+    <meta property="og:title" content="صابون نيڤ للغسيل المعطر - منتج سوداني أصلي">
+    <meta property="og:description" content="صابون غسيل طبيعي 100% يصنع يدوياً في أرقو، الولاية الشمالية، السودان">
+    <meta property="og:image" content="https://موقعك.com/0.png">
+    <meta property="og:url" content="https://موقعك.com">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_SA">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="صابون نيڤ للغسيل المعطر">
+    <meta name="twitter:description" content="منتج سوداني طبيعي 100% من أرقو">
+    <meta name="twitter:image" content="https://موقعك.com/0.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://xenon31.github.io/Nive_Soap/">
+    
     <!-- Font Awesome للأيقونات -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- البيانات المنظمة -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "نيڤ للصابون",
+        "url": "https://موقعك.com",
+        "logo": "https://موقعك.com/0.png",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+249-11-357-0426",
+            "contactType": "Customer Service",
+            "areaServed": "SD",
+            "availableLanguage": "ar"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "أرقو",
+            "addressRegion": "الولاية الشمالية",
+            "addressCountry": "SD"
+        }
+    }
+    </script>
     
     <style>
         /* نظام ألوان محسن */
@@ -25,10 +69,15 @@
             --text-light: #666666;
         }
         
+        /* إعدادات عامة */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
         }
         
         body {
@@ -39,6 +88,7 @@
             overflow-x: hidden;
         }
         
+        /* تنسيقات المساعدة */
         .container {
             width: 100%;
             max-width: 1200px;
@@ -50,7 +100,64 @@
             padding: 60px 0;
         }
         
-        /* شريط التنقل */
+        .icon-middle {
+            vertical-align: middle;
+            margin-left: 5px;
+        }
+        
+        /* الأزرار */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 30px;
+            background: var(--sudan-gold);
+            color: var(--sudan-dark);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            gap: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .btn-primary {
+            background: var(--sudan-red);
+            color: white;
+        }
+        
+        .btn i {
+            font-size: 1.1rem;
+        }
+        
+        /* العنوان الرئيسي للأقسام */
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--sudan-red);
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 60px;
+            height: 3px;
+            background: var(--sudan-gold);
+        }
+        
+        /* ========== الهيدر ========== */
         header {
             position: fixed;
             top: 0;
@@ -72,6 +179,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            text-decoration: none;
         }
         
         .logo-img {
@@ -95,6 +203,7 @@
             color: var(--text-dark);
             text-decoration: none;
             padding: 5px 10px;
+            transition: color 0.3s ease;
         }
         
         .nav-link:hover,
@@ -109,9 +218,13 @@
             font-size: 1.5rem;
             color: var(--sudan-red);
             cursor: pointer;
+            width: 40px;
+            height: 40px;
+            align-items: center;
+            justify-content: center;
         }
         
-        /* القسم الرئيسي */
+        /* ========== القسم الرئيسي ========== */
         .hero {
             background: var(--sudan-red);
             min-height: 80vh;
@@ -142,55 +255,22 @@
             opacity: 0.9;
         }
         
-        /* أزرار */
-        .btn {
+        .hero-tags {
+            margin: 25px 0;
+        }
+        
+        .hero-tag {
+            background: rgba(255,255,255,0.2);
+            padding: 8px 15px;
+            border-radius: 4px;
+            margin: 5px;
             display: inline-flex;
             align-items: center;
-            justify-content: center;
-            padding: 12px 30px;
-            background: var(--sudan-gold);
-            color: var(--sudan-dark);
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: bold;
-            margin: 10px;
-            border: none;
-            cursor: pointer;
-            gap: 8px;
         }
         
-        .btn-primary {
-            background: var(--sudan-red);
-            color: white;
-        }
-        
-        .btn i {
-            font-size: 1.1rem;
-        }
-        
-        /* قسم القصة */
+        /* ========== قسم القصة ========== */
         .story-section {
             background-color: white;
-            padding: 60px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            color: var(--sudan-red);
-            margin-bottom: 30px;
-            position: relative;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            right: 50%;
-            transform: translateX(50%);
-            width: 60px;
-            height: 3px;
-            background: var(--sudan-gold);
         }
         
         .story-grid {
@@ -204,6 +284,8 @@
             font-size: 1.5rem;
             color: var(--sudan-dark);
             margin-bottom: 20px;
+            display: flex;
+            align-items: center;
         }
         
         .highlight-box {
@@ -220,10 +302,9 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
         
-        /* قسم المميزات */
+        /* ========== قسم المميزات ========== */
         .benefits-section {
             background: #f9f9f9;
-            padding: 60px 0;
         }
         
         .benefits-grid {
@@ -239,6 +320,12 @@
             border-radius: 8px;
             text-align: center;
             box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.12);
         }
         
         .benefit-icon {
@@ -256,11 +343,7 @@
             color: var(--sudan-dark);
         }
         
-        /* معرض المنتج */
-        .gallery-section {
-            padding: 60px 0;
-        }
-        
+        /* ========== معرض المنتج ========== */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -273,6 +356,11 @@
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
         }
         
         .gallery-image {
@@ -284,16 +372,25 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-image img {
+            transform: scale(1.05);
         }
         
         .gallery-content {
             padding: 15px;
         }
         
-        /* قسم التواصل - أيقونات محسنة */
+        .gallery-content h4 {
+            color: var(--sudan-red);
+            margin-bottom: 8px;
+        }
+        
+        /* ========== قسم التواصل ========== */
         .contact-section {
             background: #f5f5f5;
-            padding: 60px 0;
         }
         
         .contact-grid {
@@ -340,7 +437,14 @@
         .location-icon { background: var(--sudan-gold); }
         .clock-icon { background: #4CAF50; }
         
-        /* تصحيح عرض رقم الهاتف */
+        .info-content h4 {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 5px;
+        }
+        
+        /* تنسيق أرقام الهواتف */
         .phone-container {
             direction: ltr;
             text-align: right;
@@ -360,15 +464,20 @@
             unicode-bidi: embed;
         }
         
-        /* أيقونات التواصل الاجتماعي - محسنة */
-        .social-section {
-            margin-top: 30px;
+        /* وسائل التواصل الاجتماعي */
+        .social-box {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
         }
         
         .social-title {
             color: var(--sudan-red);
             margin-bottom: 15px;
             font-size: 1.2rem;
+            display: flex;
+            align-items: center;
         }
         
         .social-links {
@@ -387,12 +496,13 @@
             color: white;
             text-decoration: none;
             font-size: 1.4rem;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0 3px 8px rgba(0,0,0,0.15);
         }
         
         .social-link:hover {
-            transform: translateY(-5px);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         
         .social-link.facebook { background: linear-gradient(135deg, #1877F2, #0D5FBF); }
@@ -400,15 +510,7 @@
         .social-link.whatsapp { background: linear-gradient(135deg, #25D366, #1DA851); }
         .social-link.phone { background: linear-gradient(135deg, var(--sudan-red), #6B1313); }
         
-        /* أيقونات وسائل التواصل في مربع منفصل */
-        .social-box {
-            background: white;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        }
-        
-        /* الفوتر */
+        /* ========== الفوتر ========== */
         footer {
             background: var(--sudan-dark);
             color: white;
@@ -464,6 +566,7 @@
         .footer-links a {
             color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
+            transition: color 0.3s ease;
         }
         
         .footer-links a:hover {
@@ -478,10 +581,10 @@
             font-size: 0.9rem;
         }
         
-        /* تحسينات للهواتف */
+        /* ========== التجاوب للهواتف ========== */
         @media (max-width: 768px) {
             .mobile-menu-btn {
-                display: block;
+                display: flex;
             }
             
             .nav-menu {
@@ -494,6 +597,7 @@
                 padding: 20px;
                 box-shadow: 0 5px 20px rgba(0,0,0,0.1);
                 transition: right 0.3s ease;
+                border-radius: 0 0 0 8px;
             }
             
             .nav-menu.active {
@@ -523,6 +627,10 @@
                 font-size: 1.8rem;
             }
             
+            .hero p {
+                font-size: 1rem;
+            }
+            
             section {
                 padding: 40px 0;
             }
@@ -536,24 +644,27 @@
                 height: 45px;
                 font-size: 1.2rem;
             }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
         }
         
-        /* تأثيرات خفيفة */
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        /* تنسيق إضافي للأيقونات في منتصف السطر */
-        .icon-middle {
-            vertical-align: middle;
-            margin-left: 5px;
-        }
-        
-        .info-content h4 {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 5px;
+        /* تحسينات للوضع المطبوع */
+        @media print {
+            header, .btn, .social-box {
+                display: none;
+            }
+            
+            .hero {
+                padding-top: 0;
+                min-height: auto;
+            }
+            
+            section {
+                padding: 20px 0;
+            }
         }
     </style>
 </head>
@@ -561,16 +672,16 @@
     <!-- الهيدر -->
     <header id="header">
         <div class="container header-container">
-            <a href="#home" class="logo">
-                <img src="0.png" alt="شعار نيڤ للصابون" class="logo-img">
+            <a href="#home" class="logo" aria-label="الرجوع إلى الصفحة الرئيسية">
+                <img src="0.png" alt="شعار نيڤ للصابون" class="logo-img" width="40" height="40">
                 <span class="logo-text">نيڤ</span>
             </a>
             
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="فتح قائمة التنقل">
                 <i class="fas fa-bars"></i>
             </button>
             
-            <nav class="nav-menu" id="navMenu">
+            <nav class="nav-menu" id="navMenu" aria-label="القائمة الرئيسية">
                 <a href="#home" class="nav-link active">
                     <i class="fas fa-home icon-middle"></i> الرئيسية
                 </a>
@@ -597,14 +708,14 @@
                 <h1>صابون <span>نيڤ</span> للغسيل المعطر</h1>
                 <p>منتج سوداني طبيعي 100% يصنع يدوياً في أرقو، الولاية الشمالية</p>
                 
-                <div style="margin: 25px 0;">
-                    <span style="background: rgba(255,255,255,0.2); padding: 8px 15px; border-radius: 4px; margin: 5px; display: inline-flex; align-items: center;">
+                <div class="hero-tags">
+                    <span class="hero-tag">
                         <i class="fas fa-leaf" style="margin-left: 5px;"></i> طبيعي 100%
                     </span>
-                    <span style="background: rgba(255,255,255,0.2); padding: 8px 15px; border-radius: 4px; margin: 5px; display: inline-flex; align-items: center;">
+                    <span class="hero-tag">
                         <i class="fas fa-hands" style="margin-left: 5px;"></i> صناعة يدوية
                     </span>
-                    <span style="background: rgba(255,255,255,0.2); padding: 8px 15px; border-radius: 4px; margin: 5px; display: inline-flex; align-items: center;">
+                    <span class="hero-tag">
                         <i class="fas fa-award" style="margin-left: 5px;"></i> جودة سودانية
                     </span>
                 </div>
@@ -644,7 +755,7 @@
                 </div>
                 
                 <div class="story-image">
-                    <img src="1.png" alt="ورشة تصنيع صابون نيڤ">
+                    <img src="1.png" alt="ورشة تصنيع صابون نيڤ" width="600" height="400" loading="lazy">
                 </div>
             </div>
         </div>
@@ -768,16 +879,16 @@
                     </h4>
                     
                     <div class="social-links">
-                        <a href="https://www.facebook.com/profile.php?id=61562260692432" target="_blank" class="social-link facebook" title="فيسبوك نيڤ">
+                        <a href="https://www.facebook.com/profile.php?id=61562260692432" target="_blank" class="social-link facebook" title="فيسبوك نيڤ" aria-label="صفحة نيڤ على فيسبوك">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="https://vm.tiktok.com/ZMHwvtmuvB6n3-EQXLu/" target="_blank" class="social-link tiktok" title="تيك توك نيڤ">
+                        <a href="https://vm.tiktok.com/ZMHwvtmuvB6n3-EQXLu/" target="_blank" class="social-link tiktok" title="تيك توك نيڤ" aria-label="حساب نيڤ على تيك توك">
                             <i class="fab fa-tiktok"></i>
                         </a>
-                        <a href="https://wa.me/249113570426" target="_blank" class="social-link whatsapp" title="واتساب نيڤ">
+                        <a href="https://wa.me/249113570426" target="_blank" class="social-link whatsapp" title="واتساب نيڤ" aria-label="تواصل مع نيڤ عبر واتساب">
                             <i class="fab fa-whatsapp"></i>
                         </a>
-                        <a href="tel:+249113570426" class="social-link phone" title="اتصال هاتفي">
+                        <a href="tel:+249113570426" class="social-link phone" title="اتصال هاتفي" aria-label="اتصل بنا هاتفياً">
                             <i class="fas fa-phone"></i>
                         </a>
                     </div>
@@ -807,7 +918,7 @@
             <div class="footer-content">
                 <div>
                     <div class="footer-logo">
-                        <img src="0.png" alt="شعار نيڤ" class="footer-logo-img">
+                        <img src="0.png" alt="شعار نيڤ" class="footer-logo-img" width="40" height="40">
                         <span style="font-size: 1.5rem; font-weight: bold; color: var(--sudan-gold);">نيڤ</span>
                     </div>
                     <p class="footer-description">
@@ -863,7 +974,7 @@
     </script>
 
     <script>
-        // بيانات الصور
+        // بيانات الصور للمعرض
         const galleryImages = [
             {
                 url: '2.jpg',
@@ -887,110 +998,154 @@
             }
         ];
 
-        // تهيئة الموقع
-        document.addEventListener('DOMContentLoaded', function() {
-            // تحديث السنة
-            document.getElementById('currentYear').textContent = new Date().getFullYear();
+        // كائن التطبيق الرئيسي
+        const NiveApp = {
+            // تهيئة الموقع
+            init: function() {
+                this.setupCurrentYear();
+                this.loadGallery();
+                this.setupMobileMenu();
+                this.setupScrollSpy();
+                this.fixPhoneNumbers();
+                console.log('موقع نيڤ جاهز للتشغيل!');
+            },
             
-            // تحميل الصور
-            loadGallery();
+            // تحديث السنة الحالية
+            setupCurrentYear: function() {
+                document.getElementById('currentYear').textContent = new Date().getFullYear();
+            },
+            
+            // تحميل معرض الصور
+            loadGallery: function() {
+                const galleryGrid = document.getElementById('galleryGrid');
+                if (!galleryGrid) return;
+                
+                galleryImages.forEach((image, index) => {
+                    const galleryItem = document.createElement('div');
+                    galleryItem.className = 'gallery-item';
+                    galleryItem.setAttribute('data-aos', 'fade-up');
+                    
+                    galleryItem.innerHTML = `
+                        <div class="gallery-image">
+                            <img src="${image.url}" alt="${image.title}" loading="lazy" width="300" height="200">
+                        </div>
+                        <div class="gallery-content">
+                            <h4>${image.title}</h4>
+                            <p>${image.description}</p>
+                        </div>
+                    `;
+                    
+                    galleryGrid.appendChild(galleryItem);
+                });
+            },
             
             // إعداد القائمة للهواتف
-            setupMobileMenu();
-            
-            // إصلاح أرقام الهواتف
-            fixPhoneNumbers();
-        });
-        
-        // تحميل معرض الصور
-        function loadGallery() {
-            const galleryGrid = document.getElementById('galleryGrid');
-            
-            galleryImages.forEach((image, index) => {
-                const galleryItem = document.createElement('div');
-                galleryItem.className = 'gallery-item';
+            setupMobileMenu: function() {
+                const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+                const navMenu = document.getElementById('navMenu');
+                const navLinks = document.querySelectorAll('.nav-link');
                 
-                galleryItem.innerHTML = `
-                    <div class="gallery-image">
-                        <img src="${image.url}" alt="${image.title}" loading="lazy">
-                    </div>
-                    <div class="gallery-content">
-                        <h4>${image.title}</h4>
-                        <p>${image.description}</p>
-                    </div>
-                `;
+                if (!mobileMenuBtn || !navMenu) return;
                 
-                galleryGrid.appendChild(galleryItem);
-            });
-        }
-        
-        // إعداد القائمة للهواتف
-        function setupMobileMenu() {
-            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-            const navMenu = document.getElementById('navMenu');
-            const navLinks = document.querySelectorAll('.nav-link');
-            
-            mobileMenuBtn.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
-                mobileMenuBtn.innerHTML = navMenu.classList.contains('active') 
-                    ? '<i class="fas fa-times"></i>' 
-                    : '<i class="fas fa-bars"></i>';
-            });
-            
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    navMenu.classList.remove('active');
-                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                mobileMenuBtn.addEventListener('click', () => {
+                    navMenu.classList.toggle('active');
+                    mobileMenuBtn.innerHTML = navMenu.classList.contains('active') 
+                        ? '<i class="fas fa-times"></i>' 
+                        : '<i class="fas fa-bars"></i>';
                     
-                    navLinks.forEach(item => item.classList.remove('active'));
-                    link.classList.add('active');
+                    // تحديث ARIA label
+                    mobileMenuBtn.setAttribute(
+                        'aria-label', 
+                        navMenu.classList.contains('active') ? 'إغلاق القائمة' : 'فتح القائمة'
+                    );
                 });
+                
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        navMenu.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                        mobileMenuBtn.setAttribute('aria-label', 'فتح القائمة');
+                        
+                        navLinks.forEach(item => item.classList.remove('active'));
+                        link.classList.add('active');
+                    });
+                });
+                
+                // إغلاق القائمة عند النقر خارجها
+                document.addEventListener('click', (event) => {
+                    if (!navMenu.contains(event.target) && !mobileMenuBtn.contains(event.target) && navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                        mobileMenuBtn.setAttribute('aria-label', 'فتح القائمة');
+                    }
+                });
+            },
+            
+            // متابعة التمرير للروابط النشطة
+            setupScrollSpy: function() {
+                const sections = document.querySelectorAll('section');
+                const navLinks = document.querySelectorAll('.nav-link');
+                
+                if (sections.length === 0) return;
+                
+                window.addEventListener('scroll', () => {
+                    let current = '';
+                    
+                    sections.forEach(section => {
+                        const sectionTop = section.offsetTop;
+                        const sectionHeight = section.clientHeight;
+                        
+                        if (window.pageYOffset >= (sectionTop - 100)) {
+                            current = section.getAttribute('id');
+                        }
+                    });
+                    
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === '#' + current) {
+                            link.classList.add('active');
+                        }
+                    });
+                });
+            },
+            
+            // إصلاح عرض أرقام الهواتف
+            fixPhoneNumbers: function() {
+                const phoneElements = document.querySelectorAll('.phone-number, .phone-container');
+                
+                phoneElements.forEach(element => {
+                    element.style.direction = 'ltr';
+                    element.style.textAlign = 'right';
+                    element.style.unicodeBidi = 'bidi-override';
+                    
+                    const phoneText = element.textContent || element.innerText;
+                    const formattedPhone = phoneText.replace(/(\d{3})(\d{2})(\d{3})(\d{4})/, '+$1 $2 $3 $4');
+                    
+                    if (element.textContent !== formattedPhone) {
+                        element.textContent = formattedPhone;
+                    }
+                });
+            },
+            
+            // دالة مساعدة: نسخ رقم الهاتف
+            copyPhoneNumber: function() {
+                const phoneNumber = '+249113570426';
+                navigator.clipboard.writeText(phoneNumber).then(() => {
+                    alert('تم نسخ رقم الهاتف: ' + phoneNumber);
+                });
+            }
+        };
+
+        // تشغيل التطبيق عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', () => NiveApp.init());
+        
+        // تحسين تحميل الصور
+        if ('loading' in HTMLImageElement.prototype) {
+            const images = document.querySelectorAll('img[loading="lazy"]');
+            images.forEach(img => {
+                img.src = img.dataset.src;
             });
         }
-        
-        // إصلاح عرض أرقام الهواتف
-        function fixPhoneNumbers() {
-            const phoneElements = document.querySelectorAll('.phone-number, .phone-container');
-            
-            phoneElements.forEach(element => {
-                // التأكد من أن الرقم يظهر بشكل صحيح
-                element.style.direction = 'ltr';
-                element.style.textAlign = 'right';
-                element.style.unicodeBidi = 'bidi-override';
-                
-                // إضافة مسافات للرقم
-                const phoneText = element.textContent || element.innerText;
-                const formattedPhone = phoneText.replace(/(\d{3})(\d{2})(\d{3})(\d{4})/, '+$1 $2 $3 $4');
-                
-                if (element.textContent !== formattedPhone) {
-                    element.textContent = formattedPhone;
-                }
-            });
-        }
-        
-        // تتبع التمرير للروابط النشطة
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('.nav-link');
-            
-            let current = '';
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                
-                if (pageYOffset >= (sectionTop - 100)) {
-                    current = section.getAttribute('id');
-                }
-            });
-            
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + current) {
-                    link.classList.add('active');
-                }
-            });
-        });
     </script>
 </body>
 </html>
